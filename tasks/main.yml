@@ -1,0 +1,26 @@
+---
+- include: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Install Puppet.
+  package:
+    name: "{{ puppet_package }}"
+    state: present
+
+- name: Add Puppet bin directory to $PATH.
+  lineinfile: >
+    dest=/etc/environment
+    state=present
+    backrefs=yes
+    regexp='PATH=(["]*)((?!.*?{{ puppet_bin_path }}).*?)(["]*)$'
+    line="PATH=\1\2:{{ puppet_bin_path }}\3"
+
+- name: Ensure Puppet service is started and enabled at boot.
+  service:
+    name: "{{ puppet_service }}"
+    state: started
+    enabled: "{{ puppet_service_enabled }}"
+  when: puppet_service_manage

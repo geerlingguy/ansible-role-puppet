@@ -1,0 +1,8 @@
+---
+- name: Add Puppet Labs GPG key.
+  rpm_key:
+    key: https://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs
+    state: present
+
+- name: Add Puppet Labs repositories.
+  yum: name={{ puppet_yum_rpm }} state=present

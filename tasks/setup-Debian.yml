@@ -1,0 +1,23 @@
+---
+- name: Ensure depdencies are installed.
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+
+- name: Add Puppet Labs apt key.
+  apt_key:
+    url: https://apt.puppetlabs.com/DEB-GPG-KEY-puppetlabs
+    state: present
+
+- name: Add Puppet Labs repository.
+  apt:
+    deb: "{{ puppet_apt_deb }}"
+    state: present
+  register: puppet_apt_deb_install
+
+- name: Update apt cache if necessary.
+  apt: update_cache=yes
+  when: puppet_apt_deb_install.changed

@@ -19,7 +19,7 @@ script:
   - ${PWD}/tests/test.sh
 
   # Test whether Puppet is installed correctly.
-  - docker exec --tty ${container_id} puppet --version
+  - docker exec --tty ${container_id} /bin/bash -c 'export PATH=$PATH:/opt/puppetlabs/bin && puppet --version'
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

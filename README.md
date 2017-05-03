@@ -12,9 +12,29 @@ None.
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    TODO.
+    puppet_package: puppetserver
 
-TODO.
+The package to be installed.
+
+    puppet_service: puppetserver
+    puppet_service_enabled: no
+    puppet_service_manage: no
+
+The service that should be run on this server. By default, this role will not manage a Puppet service, and will not enable it at boot time.
+
+    puppet_bin_path: /opt/puppetlabs/bin
+
+The path to all the Puppet Labs binaries (after the package is installed).
+
+    # Used only for Debian/Ubuntu.
+    puppet_apt_deb: "https://apt.puppetlabs.com/puppetlabs-release-pc1-{{ ansible_distribution_release }}.deb"
+
+The .deb file for installation on Debian-based OSes.
+
+    # Used only for RedHat/CentOS.
+    puppet_yum_rpm: https://yum.puppetlabs.com/el/7/products/x86_64/puppetlabs-release-7-12.noarch.rpm
+
+The .rpm file for installation on RedHat-based OSes.
 
 ## Dependencies
 

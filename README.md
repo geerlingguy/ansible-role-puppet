@@ -6,7 +6,7 @@ An Ansible Role that installs [Puppet](https://www.docker.com) on Linux.
 
 ## Requirements
 
-None.
+Requires Java 7 or later to be installed on the server (you can use the `geerlingguy.java` role to install Java if needed; see the test playbook in `tests/` for an example).
 
 ## Role Variables
 

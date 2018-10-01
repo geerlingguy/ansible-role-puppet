@@ -13,5 +13,5 @@
 
   post_tasks:
     - name: Verify Puppet is available.
-      command: /opt/puppetlabs/bin/puppet --version
+      command: puppet --version
       changed_when: false

@@ -8,19 +8,21 @@ galaxy_info:
   license: "license (BSD, MIT)"
   min_ansible_version: 2.0
   platforms:
-  - name: EL
-    versions:
-    - 7
-  - name: Debian
-    versions:
-    - jessie
-  - name: Ubuntu
-    versions:
-    - trusty
-    - xenial
+    - name: EL
+      versions:
+        - 7
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
   galaxy_tags:
     - system
     - configuration
     - cm
     - orchestration
     - server
+    - puppet

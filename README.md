@@ -17,8 +17,8 @@ Available variables are listed below, along with default values (see `defaults/m
 The package to be installed.
 
     puppet_service: puppetserver
-    puppet_service_enabled: no
-    puppet_service_manage: no
+    puppet_service_enabled: false
+    puppet_service_manage: false
 
 The service that should be run on this server. By default, this role will not manage a Puppet service, and will not enable it at boot time.
 

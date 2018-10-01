@@ -17,6 +17,7 @@ Available variables are listed below, along with default values (see `defaults/m
 The package to be installed.
 
     puppet_service: puppetserver
+    puppet_service_state: started
     puppet_service_enabled: false
     puppet_service_manage: false
 

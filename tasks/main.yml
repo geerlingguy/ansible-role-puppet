@@ -21,6 +21,6 @@
 - name: Ensure Puppet service is started and enabled at boot.
   service:
     name: "{{ puppet_service }}"
-    state: started
+    state: "{{ puppet_service_state }}"
     enabled: "{{ puppet_service_enabled }}"
   when: puppet_service_manage

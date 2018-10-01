@@ -2,6 +2,7 @@
 puppet_package: puppetserver
 
 puppet_service: puppetserver
+puppet_service_state: started
 puppet_service_enabled: false
 puppet_service_manage: false
 

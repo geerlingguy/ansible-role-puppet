@@ -11,7 +11,7 @@
       when: ansible_os_family == 'Debian'
     - role: geerlingguy.puppet
 
-  post_tasks:
-    - name: Verify Puppet is available.
-      command: puppet --version
-      changed_when: false
+  # post_tasks:
+  #   - name: Verify Puppet is available.
+  #     command: puppet --version
+  #     changed_when: false

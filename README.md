@@ -28,12 +28,12 @@ The service that should be run on this server. By default, this role will not ma
 The path to all the Puppet Labs binaries (after the package is installed).
 
     # Used only for Debian/Ubuntu.
-    puppet_apt_deb: "https://apt.puppetlabs.com/puppetlabs-release-pc1-{{ ansible_distribution_release }}.deb"
+    puppet_apt_deb: "https://apt.puppetlabs.com/puppet6-release-{{ ansible_distribution_release }}.deb"
 
 The .deb file for installation on Debian-based OSes.
 
     # Used only for RedHat/CentOS.
-    puppet_yum_rpm: https://yum.puppetlabs.com/el/7/products/x86_64/puppetlabs-release-7-12.noarch.rpm
+    puppet_yum_rpm: "https://yum.puppet.com/puppet6/puppet6-release-el-7.noarch.rpm"
 
 The .rpm file for installation on RedHat-based OSes.
 

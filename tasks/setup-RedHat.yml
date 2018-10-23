@@ -5,4 +5,4 @@
     state: present
 
 - name: Add Puppet Labs repositories.
-  yum: name={{ puppet_yum_rpm }} state=present
+  package: name={{ puppet_yum_rpm }} state=present

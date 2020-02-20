@@ -1,0 +1,12 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  pre_tasks:
+    - include: java-8.yml
+
+  roles:
+    - role: geerlingguy.java
+      when: ansible_os_family == 'Debian'
+    - role: geerlingguy.puppet

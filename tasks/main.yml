@@ -17,6 +17,7 @@
     backrefs=yes
     regexp='PATH=(["]*)((?!.*?{{ puppet_bin_path }}).*?)(["]*)$'
     line="PATH=\1\2:{{ puppet_bin_path }}\3"
+    mode=0644
 
 - name: Ensure Puppet service is started and enabled at boot.
   service:

@@ -8,7 +8,7 @@
 
 - name: Add Puppet Labs apt key.
   apt_key:
-    url: https://apt.puppetlabs.com/DEB-GPG-KEY-puppetlabs
+    url: https://apt.puppetlabs.com/DEB-GPG-KEY-puppet-20250406
     state: present
 
 - name: Add Puppet Labs repository.

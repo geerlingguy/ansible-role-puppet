@@ -12,4 +12,4 @@ puppet_bin_path: /opt/puppetlabs/bin
 puppet_apt_deb: "https://apt.puppetlabs.com/puppet6-release-{{ ansible_distribution_release }}.deb"
 
 # Used only for RedHat/CentOS.
-puppet_yum_rpm: "https://yum.puppet.com/puppet6/puppet6-release-el-7.noarch.rpm"
+puppet_yum_rpm: "https://yum.puppet.com/puppet6-release-el-{{ ansible_distribution_major_version }}.noarch.rpm"

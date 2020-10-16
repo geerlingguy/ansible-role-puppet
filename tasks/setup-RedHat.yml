@@ -1,7 +1,7 @@
 ---
 - name: Add Puppet Labs GPG key.
   rpm_key:
-    key: https://yum.puppetlabs.com/RPM-GPG-KEY-puppetlabs
+    key: https://yum.puppet.com/RPM-GPG-KEY-puppet-20250406
     state: present
 
 - name: Add Puppet Labs repositories.

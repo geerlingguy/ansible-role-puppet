@@ -1,0 +1,19 @@
+---
+- name: Update apt cache.
+  apt: update_cache=yes cache_valid_time=600
+  when: ansible_os_family == 'Debian'
+  changed_when: false
+
+# Ubuntu.
+- name: Set the java_packages variable (Ubuntu).
+  set_fact:
+    java_packages:
+      - openjdk-11-jdk
+  when: ansible_distribution == 'Ubuntu'
+
+# Debian.
+- name: Set the java_packages variable (Debian).
+  set_fact:
+    java_packages:
+      - openjdk-11-jdk
+  when: ansible_distribution == 'Debian'

@@ -5,6 +5,7 @@
       - apt-transport-https
       - ca-certificates
       - gnupg2
+      - xz-utils
     state: present
 
 - name: Add Puppet Labs apt key.

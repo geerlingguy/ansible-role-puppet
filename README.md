@@ -1,6 +1,6 @@
 # Ansible Role: Puppet
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-puppet.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-puppet)
+[![Build Status](https://travis-ci.com/geerlingguy/ansible-role-puppet.svg?branch=master)](https://travis-ci.com/geerlingguy/ansible-role-puppet)
 
 An Ansible Role that installs [Puppet](https://www.docker.com) on Linux.
 

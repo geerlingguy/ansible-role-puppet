@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/geerlingguy/ansible-role-puppet/workflows/CI/badge.svg?event=push)](https://github.com/geerlingguy/ansible-role-puppet/actions?query=workflow%3ACI)
 
-An Ansible Role that installs [Puppet](https://www.docker.com) on Linux.
+An Ansible Role that installs [Puppet](https://www.puppet.com) on Linux.
 
 ## Requirements
 

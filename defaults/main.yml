@@ -8,8 +8,10 @@ puppet_service_manage: false
 
 puppet_bin_path: /opt/puppetlabs/bin
 
+puppet_version: 7
+
 # Used only for Debian/Ubuntu.
-puppet_apt_deb: "https://apt.puppetlabs.com/puppet6-release-{{ ansible_distribution_release }}.deb"
+puppet_apt_deb: "https://apt.puppetlabs.com/puppet{{ puppet_version }}-release-{{ ansible_distribution_release }}.deb"
 
 # Used only for RedHat/CentOS.
-puppet_yum_rpm: "https://yum.puppet.com/puppet6-release-el-{{ ansible_distribution_major_version }}.noarch.rpm"
+puppet_yum_rpm: "https://yum.puppet.com/puppet{{ puppet_version }}-release-el-{{ ansible_distribution_major_version }}.noarch.rpm"

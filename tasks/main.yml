@@ -6,7 +6,6 @@
   when: ansible_os_family == 'Debian'
 
 - name: Install Puppet.
-  become: true
   package:
     name: "{{ puppet_package }}"
     state: present

@@ -12,9 +12,10 @@ Requires Java 7 or later to be installed on the server (you can use the `geerlin
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    puppet_package: puppetserver
+    puppet_server_package: puppetserver
+    puppet_agent_package: puppet-agent
 
-The package to be installed.
+The packages to be installed.
 
     puppet_service: puppetserver
     puppet_service_state: started
@@ -26,6 +27,10 @@ The service that should be run on this server. By default, this role will not ma
     puppet_bin_path: /opt/puppetlabs/bin
 
 The path to all the Puppet Labs binaries (after the package is installed).
+
+    puppet_server_enabled: false
+
+The option to install the puppetserver.
 
     puppet_version: 7
 

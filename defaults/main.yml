@@ -1,5 +1,6 @@
 ---
-puppet_package: puppetserver
+puppet_server_package: puppetserver
+puppet_agent_package: puppet-agent
 
 puppet_service: puppetserver
 puppet_service_state: started
@@ -8,6 +9,7 @@ puppet_service_manage: false
 
 puppet_bin_path: /opt/puppetlabs/bin
 
+puppet_server_enabled: false
 puppet_version: 7
 
 # Used only for Debian/Ubuntu.

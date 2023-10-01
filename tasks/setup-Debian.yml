@@ -1,6 +1,6 @@
 ---
 - name: Ensure dependencies are installed.
-  apt:
+  ansible.builtin.apt:
     name:
       - apt-transport-https
       - ca-certificates
@@ -8,19 +8,21 @@
       - xz-utils
     state: present
     update_cache: true
+    cache_valid_time: 600
 
 - name: Add Puppet Labs apt key.
-  apt_key:
+  ansible.builtin.apt_key:
     url: https://apt.puppetlabs.com/DEB-GPG-KEY-puppet-20250406
     state: present
 
 - name: Add Puppet Labs repository.
-  apt:
+  ansible.builtin.apt:
     deb: "{{ puppet_apt_deb }}"
     state: present
   register: puppet_apt_deb_install
 
 - name: Update apt cache if necessary.
-  apt: update_cache=true
+  ansible.builtin.apt:
+    update_cache: true
   when: puppet_apt_deb_install.changed
   tags: ['skip_ansible_lint']

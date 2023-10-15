@@ -8,7 +8,9 @@ puppet_service_manage: false
 
 puppet_bin_path: /opt/puppetlabs/bin
 
-puppet_version: 7
+puppet_version: 8
+
+puppet_default_memory: 2g
 
 # Used only for Debian/Ubuntu.
 puppet_apt_deb: "https://apt.puppetlabs.com/puppet{{ puppet_version }}-release-{{ ansible_distribution_release }}.deb"

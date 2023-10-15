@@ -1,0 +1,24 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+  provider:
+    name: virtualbox
+platforms:
+  - name: ub20
+    box: ubuntu/focal64
+    memory: 1024
+  - name: ub22
+    box: ubuntu/jammy64
+    memory: 1024
+provisioner:
+  name: ansible
+  inventory:
+    group_vars:
+      all:
+        puppet_default_memory: 512m
+        puppet_service_manage: true
+        puppet_service_enabled: true
+verifier:
+  name: ansible

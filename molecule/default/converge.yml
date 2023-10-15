@@ -4,7 +4,12 @@
   become: true
 
   pre_tasks:
-    - include: java-11.yml
+    # Debian or Ubuntu
+    - name: Set the java_packages variable.
+      ansible.builtin.set_fact:
+        java_packages:
+          - openjdk-11-jdk
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
   roles:
     - role: geerlingguy.java

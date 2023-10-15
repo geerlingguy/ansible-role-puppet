@@ -41,6 +41,10 @@ The .deb file for installation on Debian-based OSes.
 
 The .rpm file for installation on RedHat-based OSes.
 
+    puppet_default_ram: 2g
+
+The amount of ram for the Puppet server service. In [test environments](https://www.puppet.com/docs/puppet/7/server/install_from_packages.html#running-puppet-server-on-a-vm), this can be reduced to `1g` or even `512m`.
+
 ## Dependencies
 
 None.

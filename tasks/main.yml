@@ -18,6 +18,26 @@
     line: 'PATH=\1\2:{{ puppet_bin_path }}\3'
     mode: "0644"
 
+- name: Set puppet config file name
+  ansible.builtin.set_fact:
+    puppet_server_config_file: /etc/sysconfig/puppetserver
+  when: ansible_os_family == "RedHat"
+
+- name: Set puppet config file name
+  ansible.builtin.set_fact:
+    puppet_server_config_file: /etc/default/puppetserver
+  when: ansible_os_family == "Debian"
+
+- name: Set amount of RAM for the Puppet server
+  ansible.builtin.lineinfile:
+    path: "{{ puppet_server_config_file }}"
+    state: present
+    regexp: ^JAVA_ARGS=
+    line: JAVA_ARGS="
+      -Xms{{ puppet_default_memory }}
+      -Xmx{{ puppet_default_memory }}
+      -Djruby.logger.class=com.puppetlabs.jruby_utils.jruby.Slf4jLogger"
+
 - name: Ensure Puppet service is started and enabled at boot.
   ansible.builtin.service:
     name: "{{ puppet_service }}"

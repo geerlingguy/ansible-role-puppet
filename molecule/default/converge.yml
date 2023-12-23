@@ -4,7 +4,19 @@
   become: true
 
   pre_tasks:
-    - include: java-11.yml
+    - name: Update apt cache.
+      apt: 
+        update_cache: true
+        cache_valid_time: 600
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+
+    # Debian based.
+    - name: Set the java_packages variable.
+      set_fact:
+        java_packages:
+          - openjdk-11-jdk
+      when: ansible_os_family == 'Debian'
 
   roles:
     - role: geerlingguy.java

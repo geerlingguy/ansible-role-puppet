@@ -5,9 +5,9 @@
 - include_tasks: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
-- name: Install Puppet.
+- name: Install puppet-agent by default.
   package:
-    name: "{{ puppet_package }}"
+    name: "{{ puppet_agent_package }}"
     state: present
 
 - name: Add Puppet bin directory to $PATH.
@@ -19,9 +19,16 @@
     line="PATH=\1\2:{{ puppet_bin_path }}\3"
     mode=0644
 
-- name: Ensure Puppet service is started and enabled at boot.
-  service:
-    name: "{{ puppet_service }}"
-    state: "{{ puppet_service_state }}"
-    enabled: "{{ puppet_service_enabled }}"
-  when: puppet_service_manage
+- block:
+    - name: Install Puppetserver if true.
+      package:
+        name: "{{ puppet_server_package }}"
+        state: present
+
+    - name: Ensure Puppet service is started and enabled at boot.
+      service:
+        name: "{{ puppet_service }}"
+        state: "{{ puppet_service_state }}"
+        enabled: "{{ puppet_service_enabled }}"
+      when: puppet_service_manage
+  when: puppet_server_enabled

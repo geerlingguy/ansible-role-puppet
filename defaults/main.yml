@@ -1,5 +1,6 @@
 ---
-puppet_package: puppetserver
+puppet_server_package: puppetserver
+puppet_agent_package: puppet-agent
 
 puppet_service: puppetserver
 puppet_service_state: started

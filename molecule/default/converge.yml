@@ -7,6 +7,7 @@
     - name: Update apt cache.
       apt:
         update_cache: true
+      when: ansible_distribution == 'Debian'
     # Debian or Ubuntu
     - name: Set the java_packages variable.
       ansible.builtin.set_fact:

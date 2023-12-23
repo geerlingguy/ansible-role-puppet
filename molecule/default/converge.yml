@@ -4,6 +4,9 @@
   become: true
 
   pre_tasks:
+    - name: Update apt cache.
+      apt:
+        update_cache: true
     # Debian or Ubuntu
     - name: Set the java_packages variable.
       ansible.builtin.set_fact:

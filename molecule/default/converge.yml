@@ -8,7 +8,7 @@
     - name: Set the java_packages variable.
       ansible.builtin.set_fact:
         java_packages:
-          - openjdk-11-jdk
+          - openjdk-17-jdk
       when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
   roles:

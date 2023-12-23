@@ -27,6 +27,10 @@ The service that should be run on this server. By default, this role will not ma
 
 The path to all the Puppet Labs binaries (after the package is installed).
 
+    puppet_server_enabled: false
+
+The option to install the puppetserver (by default only the puppet-agent will be installed).
+
     puppet_version: 7
 
 The major version of Puppet to be installed.

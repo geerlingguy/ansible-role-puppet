@@ -20,6 +20,7 @@
   register: puppet_apt_deb_install
 
 - name: Update apt cache if necessary.
-  apt: update_cache=true
+  apt: 
+    update_cache: true
   when: puppet_apt_deb_install.changed
   tags: ['skip_ansible_lint']

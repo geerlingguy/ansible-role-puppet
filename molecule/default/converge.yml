@@ -4,7 +4,7 @@
   become: true
 
   pre_tasks:
-    - include: java-11.yml
+    - include_tasks: java-11.yml
 
   roles:
     - role: geerlingguy.java

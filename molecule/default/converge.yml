@@ -3,9 +3,6 @@
   hosts: all
   #become: true
 
-  pre_tasks:
-    - include_tasks: java-11.yml
-
   roles:
     - role: geerlingguy.java
       when: ansible_os_family == 'Debian'

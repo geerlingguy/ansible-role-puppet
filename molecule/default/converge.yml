@@ -3,9 +3,10 @@
   hosts: all
   #become: true
 
-  vars:
-    java_packages:
-      - openjdk-17-jdk
+  pre_tasks:
+    - name: Update apt cache if necessary.
+      apt: update_cache=true cache_valid_time=300
+      when: ansible_os_family == 'Debian'
 
   roles:
     - role: geerlingguy.java

@@ -3,6 +3,10 @@
   hosts: all
   #become: true
 
+  vars:
+    java_packages:
+      - openjdk-17-jdk
+
   roles:
     - role: geerlingguy.java
       when: ansible_os_family == 'Debian'

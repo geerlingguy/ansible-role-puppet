@@ -1,6 +1,6 @@
 # Ansible Role: Puppet
 
-[![CI](https://github.com/geerlingguy/ansible-role-puppet/workflows/CI/badge.svg?event=push)](https://github.com/geerlingguy/ansible-role-puppet/actions?query=workflow%3ACI)
+[![CI](https://github.com/geerlingguy/ansible-role-puppet/actions/workflows/ci.yml/badge.svg)](https://github.com/geerlingguy/ansible-role-puppet/actions/workflows/ci.yml)
 
 An Ansible Role that installs [Puppet](https://www.puppet.com) on Linux.
 
